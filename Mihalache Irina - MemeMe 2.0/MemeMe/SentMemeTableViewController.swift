@@ -11,7 +11,6 @@ import Photos
 
 class SentMemeTableViewController: UITableViewController {
     
-    
         var meme: [Meme]! {
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
@@ -32,7 +31,6 @@ class SentMemeTableViewController: UITableViewController {
         
     }
     
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.meme.count
         
@@ -43,7 +41,6 @@ class SentMemeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SentMemeTableViewCell") as! SentMemeTableViewCell
         let memeForRow = self.meme[(indexPath as NSIndexPath).row]
         
-        // Set the name and image
         cell.tableUILabel?.text = memeForRow.topText + memeForRow.bottomText
         cell.tableViewCell?.image = memeForRow.memedImage
         
